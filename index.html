@@ -13,13 +13,25 @@
         }
 
         body {
+            font-family: 'Raleway', sans-serif;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #667eea 0%, #8948c9 100%);
             background-size: 150% 150%;
-            font-family: 'Raleway', sans-serif;
+            animation: gradient 10s ease infinite;
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .text-container {
@@ -31,13 +43,14 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            margin-bottom: 4rem;
+            margin: auto;
+            width: 50%;
         }
 
         .tagline {
             position: absolute;
             width: 100%;
-            text-align: right;
+            text-align: center;
             color: white;
             font-size: 2rem;
             font-weight: 300;
@@ -68,7 +81,10 @@
         }
 
         .proof {
+            position: relative;
             margin-left: 0px;
+            width: 50%;
+            text-align: left;
         }
         
          /* Tablet Styles */
@@ -135,7 +151,7 @@
             <span class="word">People</span>
         </div>
         <span class="proof">proof</span>
-        <div class="tagline">Society could be better</div>
+        <div class="tagline">Removing ego from decision making</div>
     </div>
 
     <script>
