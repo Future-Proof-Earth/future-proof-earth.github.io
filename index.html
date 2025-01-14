@@ -17,7 +17,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #8948c9 100%);
+            background-size: 150% 150%;
             font-family: 'Raleway', sans-serif;
         }
 
@@ -68,6 +69,55 @@
 
         .proof {
             margin-left: 0px;
+        }
+        
+         /* Tablet Styles */
+         @media screen and (max-width: 1024px) {
+            .text-container {
+                font-size: 4rem;
+                height: 4.5rem;
+            }
+            .changing-text {
+                width: 300px;
+                height: 4.5rem;
+            }
+            .tagline {
+                font-size: 1.5rem;
+                bottom: -3rem;
+            }
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .text-container {
+                font-size: 4rem;
+                height: 4.5rem;
+            }
+            .changing-text {
+                width: 300px;
+                height: 4.5rem;
+            }
+            .tagline {
+                font-size: 1.5rem;
+                bottom: -3rem;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media screen and (max-width: 375px) {
+            .text-container {
+                font-size: 2.5rem;
+                height: 3.5rem;
+            }
+            .changing-text {
+                width: 200px;
+                height: 3.5rem;
+            }
+            .tagline {
+                font-size: 1.2rem;
+                bottom: -3rem;
+                padding: 0 10px;
+            }
         }
     </style>
 </head>
