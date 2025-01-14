@@ -84,7 +84,7 @@
             <span class="word">Rumour</span>
             <span class="word">Scam</span>
         </div>
-        <span class="proof">-Proof</span>
+        <span class="proof">proof</span>
         <div class="tagline">Society could be better</div>
     </div>
 
@@ -97,11 +97,11 @@
             currentIndex = (currentIndex + 1) % words.length;
             words[currentIndex].classList.add('visible');
             
-            const timeout = currentIndex === 0 ? 8000 : 400;
+            const timeout = currentIndex === 0 ? 6000 : 400;
             setTimeout(switchWord, timeout);
         }
 
-        setTimeout(switchWord, 8000);
+        setTimeout(switchWord, 6000);
     </script>
 </body>
 </html>
