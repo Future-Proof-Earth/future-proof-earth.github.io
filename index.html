@@ -97,7 +97,7 @@
             currentIndex = (currentIndex + 1) % words.length;
             words[currentIndex].classList.add('visible');
             
-            const timeout = currentIndex === 0 ? 6000 : 400;
+            const timeout = currentIndex === 0 ? 6000 : 300;
             setTimeout(switchWord, timeout);
         }
 
