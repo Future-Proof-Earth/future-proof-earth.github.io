@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future-Proof</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,22 +16,29 @@
             font-family: 'Raleway', sans-serif;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #667eea 0%, #8948c9 100%);
             background-size: 150% 150%;
             animation: gradient 10s ease infinite;
+            overflow-x: hidden;
         }
+
         @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            padding: 2rem;
         }
 
         .text-container {
@@ -56,7 +63,7 @@
             font-weight: 300;
             opacity: 0.9;
             letter-spacing: 0.05em;
-            bottom: -3rem;
+            bottom: -5rem;
         }
 
         .changing-text {
@@ -74,10 +81,15 @@
             display: none;
             width: 100%;
             text-align: right;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .word.visible {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .proof {
@@ -86,9 +98,124 @@
             width: 50%;
             text-align: left;
         }
-        
-         /* Tablet Styles */
-         @media screen and (max-width: 1024px) {
+
+        .content-section {
+            max-width: 800px;
+            margin: 8rem auto 0;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #8948c9;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1rem 1.5rem;
+            border: none;
+            background: white;
+            color: #8948c9;
+            text-decoration: none;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            background: #f0f0f0;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            position: relative;
+            padding: 0.5rem;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .email-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        @media screen and (max-width: 768px) {
+            .signup-form {
+                flex-direction: column;
+                background: transparent;
+                padding: 0;
+                border: none;
+                backdrop-filter: none;
+            }
+
+            .email-input {
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .cta-button {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        /* Tablet Styles */
+        @media screen and (max-width: 1024px) {
             .text-container {
                 font-size: 4rem;
                 height: 4.5rem;
@@ -100,58 +227,76 @@
             .tagline {
                 font-size: 1.5rem;
                 bottom: -3rem;
+                padding: 0 10px;
+            }
+            .content-section {
+                margin-top: 4rem;
+                padding: 1.5rem;
             }
         }
 
         /* Mobile Styles */
         @media screen and (max-width: 768px) {
             .text-container {
-                font-size: 4rem;
-                height: 4.5rem;
+                font-size: 2rem;
+                height: 2rem;
             }
             .changing-text {
-                width: 300px;
-                height: 4.5rem;
+                width: 150px;
+                height: 2rem;
             }
             .tagline {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 bottom: -3rem;
+                padding: 0 10px;
+            }
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+            .content-section p {
+                font-size: 1rem;
             }
         }
 
         /* Small Mobile Styles */
         @media screen and (max-width: 375px) {
-            .text-container {
-                font-size: 2.5rem;
-                height: 3.5rem;
+            .main-container {
+                padding: 1rem;
             }
-            .changing-text {
-                width: 200px;
-                height: 3.5rem;
-            }
-            .tagline {
-                font-size: 1.2rem;
-                bottom: -3rem;
-                padding: 0 10px;
+            .content-section {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="text-container">
-        <div class="changing-text">
-            <span class="word visible">Future</span>
-            <span class="word">Rumour</span>
-            <span class="word">Bias</span>
-            <span class="word">Lie</span>
-            <span class="word">Cheat</span>
-            <span class="word">Fraud</span>
-            <span class="word">Scam</span>
-            <span class="word">Fake</span>
-            <span class="word">People</span>
+    <div class="main-container">
+        <div class="text-container">
+            <div class="changing-text">
+                <span class="word visible">Future</span>
+                <span class="word">Rumour</span>
+                <span class="word">Bias</span>
+                <span class="word">Lie</span>
+                <span class="word">Cheat</span>
+                <span class="word">Fraud</span>
+                <span class="word">Scam</span>
+                <span class="word">Fake</span>
+                <span class="word">People</span>
+            </div>
+            <span class="proof">proof</span>
+            <div class="tagline">Removing ego from decision making</div>
         </div>
-        <span class="proof">proof</span>
-        <div class="tagline">Removing ego from decision making</div>
+
+        <section class="content-section">
+            <p>We are losing the battle with truth and data. In a world of bot-created content, targeted feeds, crafted narratives and media echo-chambers, how are we supposed to make informed decisions that improve our wellbeing?</p>
+            <p>Every decision carries the weight of our biases, beliefs, and ego. And the stories told to us carry the weight of someone else's. But what if we could strip all that away? What if we could see through the manipulation of data in every major decision?</p>
+            <p>Futureproof is building tools to strip away bias and reveal the true complexity behind seemingly simple choices. We expose how the stories we're presented with often diverge from the data underneath. This shapes our understanding, and our understanding shapes our decisions.</p>
+            <p><strong>Understanding reality shouldn't be a privilege - it should be our shared foundation.</strong></p>
+            <form action="https://formspree.io/f/mqaajbwj" method="POST" class="signup-form">
+                <input type="email" name="email" placeholder="Enter your email" required class="email-input">
+                <button type="submit" class="cta-button">Join the waitlist</button>
+            </form>
+        </section>
     </div>
 
     <script>
