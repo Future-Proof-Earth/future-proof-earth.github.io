@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Breakdown - Future-Proof</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- React and ReactDOM -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    
+    <!-- React Icons (replacing Lucide) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide-react/0.263.1/lucide-react.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #8948c9 100%);
+            background-size: 150% 150%;
+            animation: gradient 10s ease infinite;
+            padding: 2rem;
+            color: white;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .gradient-button {
+            background: linear-gradient(to right, #4f46e5, #8948c9);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.25rem;
+        }
+
+        .gradient-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .chevron-icon {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .chevron-icon.expanded {
+            transform: rotate(90deg);
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .glassmorphic {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+        // Simple chevron components since we can't easily import Lucide in this context
+        const ChevronRight = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+            </svg>
+        );
+        
+        const ChevronDown = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m6 9 6 6 6-6"/>
+            </svg>
+        );
+
+        const TopicBreakdown = () => {
+            const [expandedItems, setExpandedItems] = useState(new Set());
+            const [isExpanded, setIsExpanded] = useState(false);
+
+            const sampleBreakdown = {
+                title: 'Should the UK leave the EU?',
+                subtopics: [
+                    {
+                        id: 'economic',
+                        title: 'Economic Impact',
+                        summary: 'Trade, financial services, and budgetary implications of EU membership affect every sector of the UK economy',
+                        factors: [
+                            {
+                                id: 'trade',
+                                title: 'Trade Relations',
+                                summary: 'The EU is the UK\'s largest trading partner, with 42% of UK exports going to EU countries in 2023',
+                                sources: [
+                                    'Office for National Statistics - UK Trade Report 2023',
+                                    'House of Commons Library - UK-EU Trading Relationship'
+                                ],
+                                expertViews: {
+                                    perspective1: 'Trade economists generally agree that EU membership reduces trade friction through standardized regulations and zero tariffs',
+                                    perspective2: 'Some economists argue that freedom to negotiate independent trade deals could offset single market losses'
+                                },
+                                subfactors: [
+                                    'Single Market Access: £294bn in annual UK-EU trade flows',
+                                    'Trade Agreement Requirements: Compliance with EU standards for exports',
+                                    'Customs Union Implications: Impact on supply chain costs',
+                                    'Global Trade Opportunities: Potential for new trade agreements',
+                                    'Supply Chain Disruption: Just-in-time manufacturing concerns'
+                                ]
+                            },
+                            {
+                                id: 'finance',
+                                title: 'Financial Services',
+                                summary: 'Financial services account for 8.6% of UK GDP and are heavily interlinked with EU markets',
+                                sources: [
+                                    'Bank of England Financial Stability Report 2023',
+                                    'TheCityUK - Key Facts about UK Financial Services'
+                                ],
+                                expertViews: {
+                                    perspective1: 'Financial regulators emphasize the importance of maintaining regulatory equivalence',
+                                    perspective2: 'Industry leaders suggest potential for regulatory innovation outside EU framework'
+                                },
+                                subfactors: [
+                                    'Passporting Rights: Access to EU financial markets',
+                                    'Financial Regulation: Compliance with EU financial rules',
+                                    'City of London Status: Position as European financial hub',
+                                    'Euro Clearing: £685tn annual euro derivatives clearing',
+                                    'Investment Flows: Foreign direct investment patterns'
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            const toggleItem = (id) => {
+                const newExpanded = new Set(expandedItems);
+                if (newExpanded.has(id)) {
+                    newExpanded.delete(id);
+                } else {
+                    newExpanded.add(id);
+                }
+                setExpandedItems(newExpanded);
+            };
+
+            const FactorItem = ({ factor }) => (
+                <div className="ml-6 mb-4">
+                    <div 
+                        className="flex items-center gap-2 cursor-pointer"
+                        onClick={() => toggleItem(factor.id)}
+                        style={{ marginBottom: '0.5rem' }}
+                    >
+                        {expandedItems.has(factor.id) ? 
+                            <ChevronDown /> : 
+                            <ChevronRight />
+                        }
+                        <span style={{ fontWeight: 500 }}>{factor.title}</span>
+                    </div>
+                    {expandedItems.has(factor.id) && (
+                        <div className="topic-card" style={{ marginLeft: '1.5rem' }}>
+                            <p style={{ marginBottom: '1rem' }}>{factor.summary}</p>
+                            
+                            <div style={{ marginBottom: '1rem' }}>
+                                <h4 style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Expert Views:</h4>
+                                <p style={{ marginBottom: '0.5rem' }}>• {factor.expertViews.perspective1}</p>
+                                <p>• {factor.expertViews.perspective2}</p>
+                            </div>
+
+                            <div style={{ marginBottom: '1rem' }}>
+                                <h4 style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Sources:</h4>
+                                {factor.sources.map((source, index) => (
+                                    <p key={index} style={{ marginBottom: '0.25rem' }}>• {source}</p>
+                                ))}
+                            </div>
+
+                            <div>
+                                <h4 style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Key Considerations:</h4>
+                                {factor.subfactors.map((subfactor, index) => (
+                                    <p key={index} style={{ marginBottom: '0.25rem' }}>• {subfactor}</p>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+
+            const SubtopicItem = ({ subtopic }) => (
+                <div style={{ marginBottom: '1rem' }}>
+                    <div 
+                        className="flex items-center gap-2 cursor-pointer"
+                        onClick={() => toggleItem(subtopic.id)}
+                        style={{ marginBottom: '0.5rem' }}
+                    >
+                        {expandedItems.has(subtopic.id) ? 
+                            <ChevronDown /> : 
+                            <ChevronRight />
+                        }
+                        <span style={{ fontWeight: 600, fontSize: '1.25rem' }}>{subtopic.title}</span>
+                    </div>
+                    {expandedItems.has(subtopic.id) && (
+                        <div>
+                            <p style={{ marginLeft: '2rem', marginBottom: '1rem', opacity: 0.9 }}>
+                                {subtopic.summary}
+                            </p>
+                            {subtopic.factors.map((factor) => (
+                                <FactorItem key={factor.id} factor={factor} />
+                            ))}
+                        </div>
+                    )}
+                </div>
+            );
+
+            return (
+                <div className="main-container">
+                    <div className="glassmorphic">
+                        <button
+                            className="gradient-button"
+                            onClick={() => setIsExpanded(!isExpanded)}
+                        >
+                            {sampleBreakdown.title}
+                        </button>
+                        
+                        {isExpanded && (
+                            <div style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '1.5rem' }}>
+                                {sampleBreakdown.subtopics.map((subtopic) => (
+                                    <SubtopicItem key={subtopic.id} subtopic={subtopic} />
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(
+            <TopicBreakdown />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
