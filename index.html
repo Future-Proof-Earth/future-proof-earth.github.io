@@ -31,6 +31,77 @@
             100% { background-position: 0% 50%; }
         }
 
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-demo-container {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-demo-button {
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-demo-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .nav-demo-button.active {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: 400;
+        }
+
+        /* Add padding to main-container to account for fixed nav */
+        .main-container {
+            padding-top: 6rem !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-demo-container {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .main-container {
+                padding-top: 7rem !important;
+            }
+        }
+
         .main-container {
             display: flex;
             flex-direction: column;
@@ -298,6 +369,28 @@
                 <button type="submit" class="cta-button">Join the waitlist</button>
             </form>
         </section>
+        <section class="content-section">
+            <div style="margin-top: 2rem;">
+                <h2 style="text-align: left;">Interactive Demos</h2>
+                <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1; text-align: left; padding-right: 2rem;">
+                            <h3>Narrative Shift</h3>
+                            <p>Explore how media bias shapes narratives and understand how the same story can be told from different ideological perspectives.</p>
+                        </div>
+                        <a href="./ideology-demo.html" class="cta-button" style="flex-shrink: 0;">Try Demo</a>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1; text-align: left; padding-right: 2rem;">
+                            <h3>Decision Explorer</h3>
+                            <p>Discover the true complexity behind seemingly simple policy decisions and explore the many factors that should inform our choices.</p>
+                        </div>
+                        <a href="./topic-breakdown-demo.html" class="cta-button" style="flex-shrink: 0;">Try Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script>
@@ -316,4 +409,11 @@
         setTimeout(switchWord, 6000);
     </script>
 </body>
+<nav class="nav-container">
+    <a href="/" class="nav-logo">Futureproof</a>
+    <div class="nav-demo-container">
+        <a href="/ideology-demo.html" class="nav-demo-button">Narrative Shift</a>
+        <a href="/topic-breakdown-demo.html" class="nav-demo-button">Decision Explorer</a>
+    </div>
+</nav>
 </html>

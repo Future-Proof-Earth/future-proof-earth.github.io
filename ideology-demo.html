@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ideology Adjuster - Future-Proof</title>
+    <title>Narrative Shift - Futureproof</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     
     <!-- React and ReactDOM -->
@@ -40,6 +40,72 @@
             100% { background-position: 0% 50%; }
         }
 
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-demo-container {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-demo-button {
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-demo-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .nav-demo-button.active {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: 400;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-demo-container {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* .main-container {
+                padding-top: 7rem !important;
+            } */
+        }
+
         .main-container {
             width: 100%;
             max-width: 1200px;
@@ -48,11 +114,11 @@
         }
 
         .ideology-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem auto;
+            /* padding: 2rem;
+            margin: 2rem auto; */
         }
 
         .slider-container {
@@ -123,6 +189,38 @@
             font-weight: 400;
         }
 
+        .demo-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: 6rem; /* Add space for fixed nav */
+            padding: 0 2rem;
+        }
+
+        .demo-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-description {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .demo-title {
+                font-size: 2rem;
+            }
+            
+            .demo-description {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+        }
+
         @media screen and (max-width: 768px) {
             .main-container {
                 padding: 1rem;
@@ -151,6 +249,17 @@
     </style>
 </head>
 <body>
+    <nav class="nav-container">
+        <a href="/" class="nav-logo">Futureproof</a>
+        <div class="nav-demo-container">
+            <a href="/ideology-demo.html" class="nav-demo-button">Narrative Shift</a>
+            <a href="/topic-breakdown-demo.html" class="nav-demo-button">Decision Explorer</a>
+        </div>
+    </nav>
+    <div class="demo-header">
+        <h1 class="demo-title">Narrative Shift</h1>
+        <p class="demo-description">See how the same facts can be shaped into different narratives. Adjust the slider to reveal how media bias influences story presentation.</p>
+    </div>
     <div class="main-container">
         <div id="ideology-adjuster-root"></div>
     </div>
