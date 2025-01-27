@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +27,17 @@
         }
 
         @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .nav-container {
@@ -123,6 +132,8 @@
             position: relative;
             margin: auto;
             width: 50%;
+            padding: 30px, 0, 30px, 0;
+            margin: 30px, 0, 30px, 0;
         }
 
         .tagline {
@@ -206,7 +217,7 @@
             font-weight: 300;
         }
 
-        .cta-button {
+        .link-button, .cta-button {
             display: inline-block;
             background: white;
             color: #8948c9;
@@ -223,7 +234,7 @@
             white-space: nowrap;
         }
 
-        .cta-button:hover {
+        .link-button, .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
@@ -283,6 +294,11 @@
                 width: 100%;
                 height: 100%;
             }
+            .link-button {
+                width: fit-content;
+                height: 100%;
+                max-width: 100%;
+            }
         }
 
         /* Tablet Styles */
@@ -291,15 +307,17 @@
                 font-size: 4rem;
                 height: 4.5rem;
             }
+
             .changing-text {
                 width: 300px;
                 height: 4.5rem;
             }
+
             .tagline {
                 font-size: 1.5rem;
                 bottom: -3rem;
-                padding: 0 10px;
             }
+
             .content-section {
                 margin-top: 4rem;
                 padding: 1.5rem;
@@ -312,18 +330,21 @@
                 font-size: 2rem;
                 height: 2rem;
             }
+
             .changing-text {
                 width: 150px;
                 height: 2rem;
             }
+
             .tagline {
                 font-size: 1rem;
                 bottom: -3rem;
-                padding: 0 10px;
             }
+
             .content-section h2 {
                 font-size: 1.5rem;
             }
+
             .content-section p {
                 font-size: 1rem;
             }
@@ -334,6 +355,7 @@
             .main-container {
                 padding: 1rem;
             }
+
             .content-section {
                 padding: 1rem;
             }
@@ -358,6 +380,7 @@
         <a href="/decision-explorer.html" class="nav-demo-button">Decision Explorer</a>
     </div>
 </nav>
+
 <body>
     <div class="main-container">
         <div class="text-container">
@@ -378,9 +401,15 @@
         </div>
 
         <section class="content-section">
-            <p>We are involved in a battle with truth and data. In a world of bot-created content, targeted feeds, crafted narratives and media echo-chambers, how can we, as a society, better evaluate information to make decisions that improve our collective wellbeing?</p>
-            <p>Every decision carries the weight of our biases, beliefs, and ego. And the stories told to us carry the weight of someone else's. But what if we could strip all that away? What if we could see through the manipulation of data in every major decision?</p>
-            <p>Futureproof is building tools to strip away bias and reveal the true complexity behind seemingly simple choices. We expose how the stories we're presented with often diverge from the data underneath. This shapes our understanding, and our understanding shapes our decisions.</p>
+            <p>We are involved in a battle with truth and data. In a world of bot-created content, targeted feeds,
+                crafted narratives and media echo-chambers, how can we, as a society, better evaluate information to
+                make decisions that improve our collective wellbeing?</p>
+            <p>Every decision carries the weight of our biases, beliefs, and ego. And the stories told to us carry the
+                weight of someone else's. But what if we could strip all that away? What if we could see through the
+                manipulation of data in every major decision?</p>
+            <p>Futureproof is building tools to strip away bias and reveal the true complexity behind seemingly simple
+                choices. We expose how the stories we're presented with often diverge from the data underneath. This
+                shapes our understanding, and our understanding shapes our decisions.</p>
             <p><strong>Understanding reality shouldn't be a privilege - it should be our shared foundation.</strong></p>
             <form action="https://formspree.io/f/mqaajbwj" method="POST" class="signup-form">
                 <input type="email" name="email" placeholder="Enter your email" required class="email-input">
@@ -394,17 +423,19 @@
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div style="flex: 1; text-align: left; padding-right: 2rem;">
                             <h3>Narrative Shift</h3>
-                            <p>Explore how media bias shapes narratives and understand how the same story can be told from different ideological perspectives.</p>
+                            <p>Explore how media bias shapes narratives and understand how the same story can be told
+                                from different ideological perspectives.</p>
                         </div>
-                        <a href="./narrative-shift.html" class="cta-button" style="flex-shrink: 0;">Try Demo</a>
+                        <a href="./narrative-shift.html" class="link-button" style="flex-shrink: 0;">Try Demo</a>
                     </div>
-                    
+
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div style="flex: 1; text-align: left; padding-right: 2rem;">
                             <h3>Decision Explorer</h3>
-                            <p>Discover the true complexity behind seemingly simple policy decisions and explore the many factors that should inform our choices.</p>
+                            <p>Discover the true complexity behind seemingly simple policy decisions and explore the
+                                many factors that should inform our choices.</p>
                         </div>
-                        <a href="./decision-explorer.html" class="cta-button" style="flex-shrink: 0;">Try Demo</a>
+                        <a href="./decision-explorer.html" class="link-button" style="flex-shrink: 0;">Try Demo</a>
                     </div>
                 </div>
             </div>
@@ -416,9 +447,11 @@
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div style="flex: 1; text-align: left; padding-right: 2rem;">
                             <h3>Future-Proofing Governance</h3>
-                            <p>An exploration of how modern software development principles could revolutionize political systems to create more adaptive, representative, and evidence-based governance.</p>
+                            <p>An exploration of how modern software development principles could revolutionize
+                                political systems to create more adaptive, representative, and evidence-based
+                                governance.</p>
                         </div>
-                        <a href="./future-proofing-governance.html" class="cta-button" style="flex-shrink: 0;">Read</a>
+                        <a href="./future-proofing-governance.html" class="link-button" style="flex-shrink: 0;">Read</a>
                     </div>
                 </div>
             </div>
@@ -428,12 +461,12 @@
     <script>
         const words = document.querySelectorAll('.word');
         let currentIndex = 0;
-        
+
         function switchWord() {
             words[currentIndex].classList.remove('visible');
             currentIndex = (currentIndex + 1) % words.length;
             words[currentIndex].classList.add('visible');
-            
+
             const timeout = currentIndex === 0 ? 6000 : 300;
             setTimeout(switchWord, timeout);
         }
@@ -444,4 +477,5 @@
 <footer class="footer">
     &copy; 2025 Strange Labs Computers Ltd
 </footer>
+
 </html>
