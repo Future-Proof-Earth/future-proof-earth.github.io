@@ -217,88 +217,9 @@
             font-weight: 300;
         }
 
-        .link-button, .cta-button {
-            display: inline-block;
-            background: white;
-            color: #8948c9;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 1rem 1.5rem;
-            border: none;
-            background: white;
-            color: #8948c9;
-            text-decoration: none;
-            font-size: 1rem;
-            white-space: nowrap;
-        }
-
-        .link-button:hover, .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            background: #f0f0f0;
-        }
-
-        .signup-form {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            width: 100%;
-            max-width: 600px;
-            margin: 2rem auto 0;
-            position: relative;
-            padding: 0.5rem;
-        }
-
-        .email-input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-family: 'Raleway', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-
-        .email-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .email-input:focus {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        @media screen and (max-width: 768px) {
-            .signup-form {
-                flex-direction: column;
-                background: transparent;
-                padding: 0;
-                border: none;
-                backdrop-filter: none;
-            }
-
-            .email-input {
-                width: 100%;
-                height: 100%;
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-
-            .cta-button {
-                width: 100%;
-                height: 100%;
-            }
-            .link-button {
-                width: fit-content;
-                height: 100%;
-                max-width: 100%;
-            }
+        .content-section ul {
+            margin-left: 100px;
+            text-align: left;
         }
 
         /* Tablet Styles */
@@ -401,73 +322,32 @@
                 <span class="word">People</span>
             </div>
             <span class="proof">proof</span>
-            <div class="tagline">Removing ego from decision making</div>
+            <div class="tagline">Our vision of the future</div>
         </div>
 
         <section class="content-section">
-            <p>We are involved in a battle with truth and data. In a world of bot-created content, targeted feeds,
-                crafted narratives and media echo-chambers, how can we, as a society, better evaluate information to
-                make decisions that improve our collective wellbeing?</p>
-            <p>Every decision carries the weight of our biases, beliefs, and ego. And the stories told to us carry the
-                weight of someone else's. But what if we could strip all that away? What if we could see through the
-                manipulation of data in every major decision?</p>
-            <p>Futureproof is building tools to strip away bias and reveal the true complexity behind seemingly simple
-                choices. We expose how the stories we're presented with often diverge from the data underneath. This
-                shapes our understanding, and our understanding shapes our decisions.</p>
-            <p style="text-align: center;"><strong>Understanding reality shouldn't be a privilege - it should be our shared foundation.</strong></p>
-            <form action="https://formspree.io/f/mqaajbwj" method="POST" class="signup-form">
-                <input type="email" name="email" placeholder="Enter your email" required class="email-input">
-                <button type="submit" class="cta-button">Join the waitlist</button>
-            </form>
-        </section>
-        <section class="content-section">
-            <div style="margin-top: 2rem;">
-                <h2 style="text-align: left;">Interactive Demos</h2>
-                <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 1rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div style="flex: 1; text-align: left; padding-right: 2rem;">
-                            <h3>Narrative Shift</h3>
-                            <p>Explore how media bias shapes narratives and understand how the same story can be told
-                                from different ideological perspectives.</p>
-                        </div>
-                        <a href="./narrative-shift.html" class="link-button" style="flex-shrink: 0;">Try Demo</a>
-                    </div>
-
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div style="flex: 1; text-align: left; padding-right: 2rem;">
-                            <h3>Decision Explorer</h3>
-                            <p>Discover the true complexity behind seemingly simple policy decisions and explore the
-                                many factors that should inform our choices.</p>
-                        </div>
-                        <a href="./decision-explorer.html" class="link-button" style="flex-shrink: 0;">Try Demo</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="content-section">
-            <div style="margin-top: 2rem;">
-                <h2 style="text-align: left;">Articles & Opinions</h2>
-                <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 1rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div style="flex: 1; text-align: left; padding-right: 2rem;">
-                            <h3>Our vision of the future</h3>
-                            <p>Reimagining society through better systems, data, and collective action</p>
-                        </div>
-                        <a href="./vision.html" class="link-button" style="flex-shrink: 0;">Read</a>
-                    </div>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 1rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div style="flex: 1; text-align: left; padding-right: 2rem;">
-                            <h3>Future-Proofing Governance</h3>
-                            <p>An exploration of how modern software development principles could revolutionize
-                                political systems to create more adaptive, representative, and evidence-based
-                                governance.</p>
-                        </div>
-                        <a href="./future-proofing-governance.html" class="link-button" style="flex-shrink: 0;">Read</a>
-                    </div>
-                </div>
-            </div>
+            <p>We envision a society where everyone thrives through better organisation, mutual support, and the ethical use of technology. 
+                Where human worth is recognized in all its dimensions - from creativity and compassion to wisdom and resilience - 
+                where suffering is prevented through collective action, and where scientific principles and modern innovations serve to strengthen truth and good governance.</p>
+            <p>We see a future where decisions are guided by clear evidence rather than prejudice, where systems adapt continuously to serve people better, 
+                and where transparency and trust are the foundation of public discourse. 
+                A world where technology empowers citizens to understand complex information, detect manipulation, and participate meaningfully in shaping their society.</p>
+            <p>Our vision embraces a transformation in how communities organise and govern themselves; moving from rigid, inherited structures to flexible, 
+                purposefully designed systems that respond to real human needs. 
+                Where progress is measured not just in economic growth, but in the elimination of preventable hardships and the creation of opportunities for all to contribute to society's advancement.</p>    
+            <p>We want to create a society that maximises population well-being through:
+                <ul>
+                    <li>Governance systems based on modern software development principles</li>
+                    <li>Equitable resource distribution based primarily on utilitarian mathematics</li>
+                    <li>Elimination of misinformation</li>
+                    <li>Enhanced critical thinking</li>
+                    <li>Higher engagement with the political process</li>
+                </ul>   
+            </p>
+            
+            <h3>How we're making this vision a reality</h3><br />
+            <p>Through innovative tools and technologies, we're working to identify misinformation, reveal data biases, and empower better decision-making. 
+                This is just the beginning of our journey toward a more transparent, efficient, and equitable society.</p>
         </section>
     </div>
 
