@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Future-Proof</title>
+    <title>Our vision of the future</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -27,17 +27,9 @@
         }
 
         @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .nav-container {
@@ -89,11 +81,6 @@
             font-weight: 400;
         }
 
-        /* Add padding to main-container to account for fixed nav */
-        .main-container {
-            padding-top: 6rem !important;
-        }
-
         @media screen and (max-width: 768px) {
             .nav-container {
                 padding: 1rem;
@@ -121,71 +108,11 @@
             padding: 2rem;
         }
 
-        .text-container {
-            text-align: center;
-            color: white;
-            font-size: 8rem;
-            height: 12rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin: auto;
-            width: 50%;
-            padding: 30px, 0, 30px, 0;
-            margin: 30px, 0, 30px, 0;
-        }
-
-        .tagline {
-            position: absolute;
-            width: 100%;
-            text-align: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: 300;
-            opacity: 0.9;
-            letter-spacing: 0.05em;
-            bottom: -5rem;
-        }
-
-        .changing-text {
-            font-weight: 700;
-            position: relative;
-            width: 600px;
-            height: 9rem;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .word {
-            position: absolute;
-            display: none;
-            width: 100%;
-            text-align: right;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .word.visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .proof {
-            position: relative;
-            margin-left: 0px;
-            width: 50%;
-            text-align: left;
-        }
-
         .content-section {
             max-width: 800px;
             margin: 8rem auto 0;
             padding: 2rem;
-            text-align: center;
+            text-align: left;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 15px;
@@ -194,6 +121,7 @@
             transform: translateY(20px);
             animation: fadeIn 1s ease forwards;
             animation-delay: 1s;
+            margin-bottom: 100px;
         }
 
         @keyframes fadeIn {
@@ -207,6 +135,7 @@
             font-size: 2rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            text-align: left;
         }
 
         .content-section p {
@@ -218,27 +147,30 @@
         }
 
         .content-section ul {
-            margin-left: 100px;
-            text-align: left;
+            margin-left: 10%;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .call-to-action {
+            background: transparent;
+            border-radius: 0.5rem;
+            border-color: white;
+            border-style: solid;
+            border-width: 1px;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .call-to-action h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
         }
 
         /* Tablet Styles */
         @media screen and (max-width: 1024px) {
-            .text-container {
-                font-size: 4rem;
-                height: 4.5rem;
-            }
-
-            .changing-text {
-                width: 300px;
-                height: 4.5rem;
-            }
-
-            .tagline {
-                font-size: 1.5rem;
-                bottom: -3rem;
-            }
-
             .content-section {
                 margin-top: 4rem;
                 padding: 1.5rem;
@@ -247,25 +179,9 @@
 
         /* Mobile Styles */
         @media screen and (max-width: 768px) {
-            .text-container {
-                font-size: 2rem;
-                height: 2rem;
-            }
-
-            .changing-text {
-                width: 150px;
-                height: 2rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-                bottom: -3rem;
-            }
-
             .content-section h2 {
                 font-size: 1.5rem;
             }
-
             .content-section p {
                 font-size: 1rem;
             }
@@ -276,7 +192,6 @@
             .main-container {
                 padding: 1rem;
             }
-
             .content-section {
                 padding: 1rem;
             }
@@ -308,24 +223,9 @@
 
 <body>
     <div class="main-container">
-        <div class="text-container">
-            <div class="changing-text">
-                <span class="word visible">Future</span>
-                <span class="word">Rumour</span>
-                <span class="word">Bias</span>
-                <span class="word">Lie</span>
-                <span class="word">Deceipt</span>
-                <span class="word">Cheat</span>
-                <span class="word">Fraud</span>
-                <span class="word">Scam</span>
-                <span class="word">Fake</span>
-                <span class="word">People</span>
-            </div>
-            <span class="proof">proof</span>
-            <div class="tagline">Our vision of the future</div>
-        </div>
-
         <section class="content-section">
+            <article>  
+            <h2>Our vision of the future</h2><br />
             <p>We envision a society where everyone thrives through better organisation, mutual support, and the ethical use of technology. 
                 Where human worth is recognized in all its dimensions - from creativity and compassion to wisdom and resilience - 
                 where suffering is prevented through collective action, and where scientific principles and modern innovations serve to strengthen truth and good governance.</p>
@@ -344,10 +244,12 @@
                     <li>Higher engagement with the political process</li>
                 </ul>   
             </p>
-            
-            <h3>How we're making this vision a reality</h3><br />
-            <p>Through innovative tools and technologies, we're working to identify misinformation, reveal data biases, and empower better decision-making. 
-                This is just the beginning of our journey toward a more transparent, efficient, and equitable society.</p>
+            <div class="call-to-action">
+                <h3>How we're making this vision a reality</h3>
+                <p>Through innovative tools and technologies, we're working to identify misinformation, reveal data biases, and empower better decision-making. This is just the beginning of our journey toward a more transparent, efficient, and equitable society.</p>
+                <p><strong>We need your help!</strong></p>
+                <p>Making this vision a reality requires collaboration and support. If you are interested in what we are doing and want to help, please get in contact by <a href="mailto:futureproof@strangelabs.io" target="_blank">email</a></p>
+            </div>
         </section>
     </div>
 
